@@ -1,0 +1,10 @@
+Z:\169_Caranguian_JanRomel_SC\practice\practice\bin\Debug\practice.exe.config
+Z:\169_Caranguian_JanRomel_SC\practice\practice\bin\Debug\practice.exe
+Z:\169_Caranguian_JanRomel_SC\practice\practice\bin\Debug\practice.pdb
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.csprojResolveAssemblyReference.cache
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.chkAirMax.resources
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.Form2.resources
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.Properties.Resources.resources
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.csproj.GenerateResource.Cache
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.exe
+Z:\169_Caranguian_JanRomel_SC\practice\practice\obj\Debug\practice.pdb
