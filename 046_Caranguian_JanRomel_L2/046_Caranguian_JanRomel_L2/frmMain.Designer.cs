@@ -41,6 +41,7 @@ namespace _046_Caranguian_JanRomel_L2
             this.txtInput = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnView = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMain)).BeginInit();
             this.SuspendLayout();
@@ -140,11 +141,22 @@ namespace _046_Caranguian_JanRomel_L2
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // btnView
+            // 
+            this.btnView.Location = new System.Drawing.Point(267, 76);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(75, 23);
+            this.btnView.TabIndex = 5;
+            this.btnView.Text = "View all";
+            this.btnView.UseVisualStyleBackColor = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
+            // 
             // ExcelImportingApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 450);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.dgMain);
@@ -176,6 +188,7 @@ namespace _046_Caranguian_JanRomel_L2
         private System.Windows.Forms.TextBox txtInput;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnView;
     }
 }
 
