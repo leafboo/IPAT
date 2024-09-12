@@ -56,6 +56,7 @@
             this.btnResetForm.TabIndex = 0;
             this.btnResetForm.Text = "Reset Form";
             this.btnResetForm.UseVisualStyleBackColor = true;
+            this.btnResetForm.Click += new System.EventHandler(this.btnResetForm_Click);
             // 
             // btnSaveForm
             // 
@@ -83,6 +84,10 @@
             // cmbDepartment
             // 
             this.cmbDepartment.FormattingEnabled = true;
+            this.cmbDepartment.Items.AddRange(new object[] {
+            "SEAITE",
+            "SABH",
+            "SEAS"});
             this.cmbDepartment.Location = new System.Drawing.Point(32, 161);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(222, 21);
@@ -106,6 +111,7 @@
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -197,6 +203,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgMain)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
