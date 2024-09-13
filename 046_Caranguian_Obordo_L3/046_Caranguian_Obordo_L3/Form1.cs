@@ -60,5 +60,36 @@ namespace _046_Caranguian_Obordo_L3
             txtLastName.Text = "";
             cmbDepartment.SelectedIndex = -1;
         }
+
+        private void importExcelFile_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void importTextFile_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSaveForm_Click(object sender, EventArgs e)
+        {
+            saveText.Title = "Save as file";
+            saveText.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveText.DefaultExt = "txt";
+            saveText.Filter = "(*.*)|*.*|Text File(*.txt)|*.txt";
+            saveText.FilterIndex = 2;
+
+            if (saveText.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = File.CreateText(saveText.FileName))
+                {
+                  foreach (DataRow row in dtgMain.Rows)
+                    {
+                    }
+                }
+            }
+           
+
+        }
     }
 }

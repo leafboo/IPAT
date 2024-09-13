@@ -39,11 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtgMain = new System.Windows.Forms.DataGridView();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openExcel = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataSourceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importExcelFile = new System.Windows.Forms.ToolStripMenuItem();
             this.importTextFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.openText = new System.Windows.Forms.OpenFileDialog();
+            this.saveText = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +68,7 @@
             this.btnSaveForm.TabIndex = 1;
             this.btnSaveForm.Text = "Save Form";
             this.btnSaveForm.UseVisualStyleBackColor = true;
+            this.btnSaveForm.Click += new System.EventHandler(this.btnSaveForm_Click);
             // 
             // txtFirstName
             // 
@@ -83,11 +86,12 @@
             // 
             // cmbDepartment
             // 
+            this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.FormattingEnabled = true;
             this.cmbDepartment.Items.AddRange(new object[] {
             "SEAITE",
             "SABH",
-            "SEAS"});
+            "SHAS"});
             this.cmbDepartment.Location = new System.Drawing.Point(32, 161);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(222, 21);
@@ -148,9 +152,9 @@
             this.dtgMain.Size = new System.Drawing.Size(420, 276);
             this.dtgMain.TabIndex = 10;
             // 
-            // openFileDialog1
+            // openExcel
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openExcel.FileName = "openFileDialog1";
             // 
             // menuStrip1
             // 
@@ -176,12 +180,18 @@
             this.importExcelFile.Name = "importExcelFile";
             this.importExcelFile.Size = new System.Drawing.Size(122, 22);
             this.importExcelFile.Text = "Excel File";
+            this.importExcelFile.Click += new System.EventHandler(this.importExcelFile_Click);
             // 
             // importTextFile
             // 
             this.importTextFile.Name = "importTextFile";
             this.importTextFile.Size = new System.Drawing.Size(122, 22);
             this.importTextFile.Text = "Text File";
+            this.importTextFile.Click += new System.EventHandler(this.importTextFile_Click);
+            // 
+            // openText
+            // 
+            this.openText.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -225,11 +235,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dtgMain;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openExcel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem dataSourceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importExcelFile;
         private System.Windows.Forms.ToolStripMenuItem importTextFile;
+        private System.Windows.Forms.OpenFileDialog openText;
+        private System.Windows.Forms.SaveFileDialog saveText;
     }
 }
 
