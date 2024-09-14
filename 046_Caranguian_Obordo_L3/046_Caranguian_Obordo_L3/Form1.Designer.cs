@@ -88,10 +88,6 @@
             // 
             this.cmbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartment.FormattingEnabled = true;
-            this.cmbDepartment.Items.AddRange(new object[] {
-            "SEAITE",
-            "SABH",
-            "SHAS"});
             this.cmbDepartment.Location = new System.Drawing.Point(32, 161);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(222, 21);

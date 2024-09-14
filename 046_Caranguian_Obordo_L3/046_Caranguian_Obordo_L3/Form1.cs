@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace _046_Caranguian_Obordo_L3
 {
@@ -63,12 +64,46 @@ namespace _046_Caranguian_Obordo_L3
 
         private void importExcelFile_Click(object sender, EventArgs e)
         {
-            
+            openExcel.Title = "Open Excel";
+            openExcel.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            openExcel.Filter = "All files (*.*)|*.*|Excel File (*.xlsx)|*.xlsx";
+            openExcel.FilterIndex = 2;
+
+            if (openExcel.ShowDialog() == DialogResult.OK) {
+
+                conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + openExcel.FileName + "; Extended Properties='Excel 12.0 Xml; HDR=Yes'"); // HDR=Yes makes the first row in the excel file the header/column name in the datatable
+                
+                // SQL query
+                query = "SELECT * FROM [Sheet1$]";
+                OleDbCommand cmd = new OleDbCommand(query, conn);
+
+                // Data adapter to fill the data into a datatable
+                OleDbDataAdapter dataAdapter = new OleDbDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                // Fill the DataTable with the values of the SQL Query that is in the dataAdapter
+                dataAdapter.Fill(dt);
+
+              
+                // Loop through each row of the "dept" column in the DataTable and add it to the comboBox
+                for (int i = 0; i < dt.Rows.Count; i++) {
+                    
+                    cmbDepartment.Items.Add(dt.Rows[i]["dept"].ToString());
+                }
+
+            }
         }
 
         private void importTextFile_Click(object sender, EventArgs e)
         {
-            
+            openText.Title = "Open Text";
+            openText.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            openText.Filter = "All files (*.*)|*.*|Excel File (*.xlsx)|*.xlsx";
+            openText.FilterIndex = 2;
+
+            if (openText.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
         }
 
         private void btnSaveForm_Click(object sender, EventArgs e)
@@ -81,10 +116,16 @@ namespace _046_Caranguian_Obordo_L3
 
             if (saveText.ShowDialog() == DialogResult.OK)
             {
-                using (StreamWriter writer = File.CreateText(saveText.FileName))
+                using (StreamWriter w = File.CreateText(saveText.FileName))
                 {
-                  foreach (DataRow row in dtgMain.Rows)
+                    foreach (DataGridViewRow row in dtgMain.Rows)
                     {
+                        if (!row.IsNewRow) // Skip the new row placeholder
+                        {
+                            w.WriteLine(row.Cells["First Name"].Value?.ToString());
+                            w.WriteLine(row.Cells["Last Name"].Value?.ToString());
+                            w.WriteLine(row.Cells["Department"].Value?.ToString());
+                        }
                     }
                 }
             }

@@ -18,3 +18,13 @@ C:\Users\Desktop\source\repos\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.csproj.CoreCompileInputs.cache
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.exe
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.pdb
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\bin\Debug\046_Caranguian_Obordo_L3.exe.config
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\bin\Debug\046_Caranguian_Obordo_L3.exe
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\bin\Debug\046_Caranguian_Obordo_L3.pdb
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.csproj.AssemblyReference.cache
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\_046_Caranguian_Obordo_L3.Form1.resources
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\_046_Caranguian_Obordo_L3.Properties.Resources.resources
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.csproj.GenerateResource.cache
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.csproj.CoreCompileInputs.cache
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.exe
+C:\Users\Desktop\Desktop\IPAT\046_Caranguian_Obordo_L3\046_Caranguian_Obordo_L3\obj\Debug\046_Caranguian_Obordo_L3.pdb
