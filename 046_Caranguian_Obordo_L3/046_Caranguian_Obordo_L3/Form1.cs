@@ -24,7 +24,6 @@ namespace _046_Caranguian_Obordo_L3
         OleDbConnection conn;
         DataTable dt = new DataTable();
 
-        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -57,14 +56,14 @@ namespace _046_Caranguian_Obordo_L3
         }
 
         public void resetValues() {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
+            txtFirstName.Clear();
+            txtLastName.Clear();
             cmbDepartment.SelectedIndex = -1;
         }
 
         private void importExcelFile_Click(object sender, EventArgs e)
         {
-            openExcel.Title = "Open Excel";
+            openExcel.Title = "Open Excel"; // Initialize the title of the dialogue box
             openExcel.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             openExcel.Filter = "All files (*.*)|*.*|Excel File (*.xlsx)|*.xlsx";
             openExcel.FilterIndex = 2;
@@ -86,9 +85,16 @@ namespace _046_Caranguian_Obordo_L3
               
                 // Loop through each row of the "dept" column in the DataTable and add it to the comboBox
                 for (int i = 0; i < dt.Rows.Count; i++) {
-                    
                     cmbDepartment.Items.Add(dt.Rows[i]["dept"].ToString());
                 }
+
+                /* Alternative way
+                 
+                 foreach (DataRow row in dt.Rows) {
+                    cmbDepartment.Items.Add(row["dept"]);
+                 }
+
+                */
 
             }
         }
@@ -97,12 +103,23 @@ namespace _046_Caranguian_Obordo_L3
         {
             openText.Title = "Open Text";
             openText.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            openText.Filter = "All files (*.*)|*.*|Excel File (*.xlsx)|*.xlsx";
+            openText.Filter = "All files (*.*)|*.*|Text File (*.txt)|*.txt";
             openText.FilterIndex = 2;
 
             if (openText.ShowDialog() == DialogResult.OK)
             {
-                
+                string [] departments = File.ReadAllLines(openText.FileName);
+                for (int i = 0; i < departments.Length;i++) {
+                    cmbDepartment.Items.Add (departments[i]);
+                }
+
+                /* Alternative way
+                 
+                foreach (string department in departments) {
+                    cmbDepartment.Items.Add(department);
+                }
+
+                */
             }
         }
 
@@ -114,18 +131,15 @@ namespace _046_Caranguian_Obordo_L3
             saveText.Filter = "(*.*)|*.*|Text File(*.txt)|*.txt";
             saveText.FilterIndex = 2;
 
-            if (saveText.ShowDialog() == DialogResult.OK)
-            {
-                using (StreamWriter w = File.CreateText(saveText.FileName))
-                {
-                    foreach (DataGridViewRow row in dtgMain.Rows)
-                    {
-                        if (!row.IsNewRow) // Skip the new row placeholder
-                        {
-                            w.WriteLine(row.Cells["First Name"].Value?.ToString());
-                            w.WriteLine(row.Cells["Last Name"].Value?.ToString());
-                            w.WriteLine(row.Cells["Department"].Value?.ToString());
-                        }
+            // Save dataGrid data to string array for testing purposes
+
+            if (saveText.ShowDialog() == DialogResult.OK) {
+                using (StreamWriter writer = File.CreateText(saveText.FileName)) {
+                    // Skip the last row because it is empty, hence, dtgMain.Rows.Count - 1
+                    for (int i = 0; i < dtgMain.Rows.Count - 1; i++) {
+                        writer.WriteLine(dtgMain.Rows[i].Cells["First Name"].Value.ToString());
+                        writer.WriteLine(dtgMain.Rows[i].Cells["Last Name"].Value.ToString());
+                        writer.WriteLine(dtgMain.Rows[i].Cells["Department"].Value.ToString() + "\n");
                     }
                 }
             }
