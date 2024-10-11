@@ -30,3 +30,5 @@
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\Midterms\DB_ACT1_046_Caranguian\DB_ACT1_046_Caranguian\obj\Debug\DB_ACT1_046_Caranguian.csproj.CopyComplete
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\Midterms\DB_ACT1_046_Caranguian\DB_ACT1_046_Caranguian\obj\Debug\DB_ACT1_046_Caranguian.exe
 \\VERBIST\j48pc38\046_Caranguian_JanRomel\Midterms\DB_ACT1_046_Caranguian\DB_ACT1_046_Caranguian\obj\Debug\DB_ACT1_046_Caranguian.pdb
+\\VERBIST\j48pc38\046_Caranguian_JanRomel\Midterms\DB_ACT1_046_Caranguian\DB_ACT1_046_Caranguian\obj\Debug\DB_ACT1_046_Caranguian.frmDeleteRecord.resources
+\\VERBIST\j48pc38\046_Caranguian_JanRomel\Midterms\DB_ACT1_046_Caranguian\DB_ACT1_046_Caranguian\obj\Debug\DB_ACT1_046_Caranguian.frmNew_UpdateRecord.resources

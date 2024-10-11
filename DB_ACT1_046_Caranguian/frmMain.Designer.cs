@@ -34,7 +34,11 @@ namespace DB_ACT1_046_Caranguian
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.grdResults = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.addOrUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteRecord = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdResults)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtKeyword
@@ -134,6 +138,31 @@ namespace DB_ACT1_046_Caranguian
             this.grdResults.Size = new System.Drawing.Size(601, 281);
             this.grdResults.TabIndex = 4;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addOrUpdate,
+            this.deleteRecord});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // addOrUpdate
+            // 
+            this.addOrUpdate.Name = "addOrUpdate";
+            this.addOrUpdate.Size = new System.Drawing.Size(96, 20);
+            this.addOrUpdate.Text = "Add or Update";
+            this.addOrUpdate.Click += new System.EventHandler(this.addOrUpdate_Click);
+            // 
+            // deleteRecord
+            // 
+            this.deleteRecord.Name = "deleteRecord";
+            this.deleteRecord.Size = new System.Drawing.Size(92, 20);
+            this.deleteRecord.Text = "Delete Record";
+            this.deleteRecord.Click += new System.EventHandler(this.deleteRecord_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,9 +173,13 @@ namespace DB_ACT1_046_Caranguian
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.cboBrand);
             this.Controls.Add(this.txtKeyword);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.grdResults)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,6 +192,9 @@ namespace DB_ACT1_046_Caranguian
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DataGridView grdResults;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem addOrUpdate;
+        private System.Windows.Forms.ToolStripMenuItem deleteRecord;
     }
 }
 

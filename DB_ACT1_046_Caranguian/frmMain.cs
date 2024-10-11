@@ -43,10 +43,13 @@ namespace DB_ACT1_046_Caranguian
 
         void searchCar()
         {
-            if (string.IsNullOrEmpty(cboBrand.Text)) {
+            if (string.IsNullOrEmpty(cboBrand.Text)) 
+            {
                 txtKeyword.Clear();
                 MessageBox.Show("Select a car brand first");
-            } else{
+            } 
+            else
+            {
                 DataTable dt = new DataTable();
 
                 dt.Columns.Add("MODEL");
@@ -62,6 +65,18 @@ namespace DB_ACT1_046_Caranguian
                 grdResults.DataSource = dt;
             }
            
+        }
+
+        private void addOrUpdate_Click(object sender, EventArgs e)
+        {
+            frmNew_UpdateRecord updateForm = new frmNew_UpdateRecord();
+            updateForm.ShowDialog();
+        }
+
+        private void deleteRecord_Click(object sender, EventArgs e)
+        {
+            frmDeleteRecord deleteForm = new frmDeleteRecord();
+            deleteForm.ShowDialog();
         }
     }
 }
