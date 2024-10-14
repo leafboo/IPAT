@@ -24,38 +24,39 @@ namespace DB_ACT1_046_Caranguian
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string query = ($"INSERT INTO car(id, model, brand, year) VALUES({txtId.Text}, {txtModel.Text}, {cboBrand.Text}, {txtYear.Text})");
-                conn = new MySqlConnection(connectionStr);
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch(Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            
+           
+            string query = ($"INSERT INTO car(id, model, brand, year) VALUES({int.Parse(txtId.Text)}, '{txtModel.Text}', '{cboBrand.Text}', '{txtYear.Text}')");
+            conn = new MySqlConnection(connectionStr);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            clearData();
+            MessageBox.Show("Data successfully added");
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string query = ($"UPDATE car SET model={txtModel.Text}, brand={cboBrand.Text}, year={txtYear.Text} WHERE id={txtId.Text}");
-                conn = new MySqlConnection(connectionStr);
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
-            catch(Exception error)
-            {
-                MessageBox.Show(error.Message);
-            }
-          
+            string query = ($"UPDATE car SET model='{txtModel.Text}', brand='{cboBrand.Text}', year='{txtYear.Text}' WHERE id={int.Parse(txtId.Text)}");
+            conn = new MySqlConnection(connectionStr);
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            clearData();
+            MessageBox.Show("Data successfully updated");
+
         }
+
+        void clearData()
+        {
+            txtId.Clear();
+            txtModel.Clear();
+            cboBrand.SelectedIndex = -1;
+            txtYear.Clear();
+        }
+
+        
     }
 }

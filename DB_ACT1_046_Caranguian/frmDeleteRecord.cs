@@ -30,21 +30,16 @@ namespace DB_ACT1_046_Caranguian
             } 
             else 
             {
-                try 
-                {
-                    string query = ($"DELETE FROM car WHERE model={txtModel.Text} AND brand={cboBrand.Text}");
-                    conn = new MySqlConnection(connectionStr);
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                } 
-                catch(Exception error)
-                {
-                    MessageBox.Show(error.Message);
-                }
+                string query = ($"DELETE FROM car WHERE model='{txtModel.Text}' AND brand='{cboBrand.Text}'");
+                conn = new MySqlConnection(connectionStr);
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+                txtModel.Clear();
+                cboBrand.SelectedIndex = -1;
                 
-               
             }
            
         }
